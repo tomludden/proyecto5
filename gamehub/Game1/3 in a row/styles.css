@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --player1-color: blue;
+  --player2-color: red;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  background-color: #222;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 70px;
+  font-family: VT323, monospace;
+  color: blueviolet;
+  text-shadow: 1px 0 rgb(219, 208, 208), 0 1px black, -1px 0 black, 0 -1px black,
+    1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+  margin-bottom: 20px;
+}
+
+.color-options {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.color-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+select:hover {
+  box-shadow: 0 0 10px 2px white;
+}
+
+.game-board {
+  display: grid;
+  margin-top: 30px;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  font-size: 5rem;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #555;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px -1px rgba(219, 197, 219, 1);
+  transition: all 0.3s;
+}
+
+.square[data-player='1'] {
+  color: var(--player1-color);
+  text-shadow: 0 0 5px blue, 0 0 5px blue;
+}
+
+.square[data-player='2'] {
+  color: var(--player2-color);
+  text-shadow: 0 0 5px red, 0 0 5px red;
+}
+
+.square.winner {
+  animation: pulse 0.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.play-btn {
+  margin-top: 40px;
+  font-family: vt323, monospace;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  transition: all 0.3s;
+}
+
+.play-btn:hover {
+  background-color: #ba1bb2;
+  box-shadow: 0 0 10px 2px white;
+}
+
+@media (max-width: 440px) {
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+}
