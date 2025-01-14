@@ -3,7 +3,11 @@ export function createCardGrid() {
   container.className = 'card-grid'
   document.body.appendChild(container)
 
-  const images = ['game1.png', 'game2.png', 'game3.png']
+  const images = [
+    './images/game1.png',
+    './images/game2.png',
+    './images/game3.png'
+  ]
   const links = [
     'Game1/3 in a row/index.html',
     'Game2/fruit collector/Yummy Fruits/index.html',
