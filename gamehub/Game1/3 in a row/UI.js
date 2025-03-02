@@ -30,7 +30,6 @@ export const endGame = (winner, winningCombo) => {
       squares[index].classList.add('winner')
     })
     setTimeout(() => {
-      alert(`Winner Player ${winner}`)
       if (winner === 1) {
         player1Audio.play()
       } else {
@@ -38,9 +37,7 @@ export const endGame = (winner, winningCombo) => {
       }
     }, 500)
   } else {
-    setTimeout(() => {
-      alert("It's a draw!")
-    }, 500)
+    setTimeout(() => {}, 500)
   }
 }
 
